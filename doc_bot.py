@@ -1,4 +1,4 @@
-Medical__data__bank = {
+bank = {
     "headache": {
         "diagnosis": "Tension Headache or Migraine ",
         "type": "symptom",
@@ -26,52 +26,52 @@ Medical__data__bank = {
 }
 
 def condition(key, info):
-    print(f"\n=== Condition Check: {key.upper()} ===")
+    print(f"Condition Check: {key.upper()} ")
     print("Diagnosis / Possible Issue:", info["diagnosis"])
     print("-" * 42)
 
     if info.get("severity") == "high":
-        print("\n[!!!] **CRITICAL NOTICE** [!!!]  ")
+        print("\n  CRITICAL NOTICE  ")#notice
         print("This looks like something that needs   urgent professional care  .")
-        print("So yeah… please don't rely on me for this one.\n")
+        print("So yeah… pleases don't rely on me for this one.\n")
 
     recommended_treatment = info["treatment"]
-    print(f"Suggested Treatment:\n -> {recommended_treatment}")
+    print(f"Suggested treatment:\n -> {recommended_treatment}")
 
-    # FIX: Used .get() to prevent crash because 'medication' is missing in dictionary
-    print(f"Suggested Medications:\n -> {info.get('medication'  , 'Not listed in database')}")
+    # adding the file
+    print(f"Suggested medications:\n -> {info.get('medication'  , 'Not listed in database')}")
     
-    # FIX: Used .get() to prevent crash because 'prevention' is missing in dictionary
-    print(f"Prevention Tips:\n -> {info.get('prevention', 'Not listed in database'  )}")
+    #prevention tips
+    print(f"Preventions Tips:\n -> {info.get('prevention', 'Not listed in database'  )}")
     print("-" * 42)
 
 def analyze_input(user_msg):
     msg = user_msg.lower().strip()
 
-    greeting = ["Hi", "hello", "hey", "Good morning", "greetings", "sup", "yo"]
+    greet = ["Hi", "hello", "hey", "Good morning", "greetings", "sup", "yo","what's up"]
 
-    if msg in greeting:
-        print("\nHey there! I'm your (slightly imperfect) medical helper bot.     ")
+    if msg in greet:
+        print("\nHey there! I'm your  medical helper bot.     ")
         print("Tell me what you're feeling — like 'fever', 'cold', etc.\n")
         return
 
     was_found = False
 
-    for symptom, details in Medical__data__bank.items():
+    for symptom, details in bank.items():
         if symptom in msg:
             condition(symptom, details)
             was_found = True
             break
 
     if not was_found:
-        print("\nHmm… I don't seem to have that condition noted anywhere.")
-        print("Try another symptom like 'fever' or 'headache'.")
+        print("\nHmm… I don't seemed to have that condition noted anywhere.")
+        print("Try anothers symptom like 'fever' or 'headache'.")
         print("Or, you know, maybe talk to a real doctor just in case.\n")
 
-print("Health Assistant Terminal (type 'Exit' to leave)  ")
+print("Health Assistant Terminalin (type 'Exit' to leave)  ")
 
 while True:
-    usr = input("Describe your symptom : ")
+    usr = input("Describe your symptoms : ")
     # FIX: compared to "exit" (lowercase) because usr.lower() makes input lowercase
     if usr.lower() == "exit":
         break

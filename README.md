@@ -13,6 +13,8 @@ A user can input a symptom (e.g., *fever, cold, headache, chest pain*), and the 
 | Feature | Description |
 |--------|-------------|
 | Symptom recognition | Detects common symptoms from user input |
+| Simulated "AI" | Uses time and random to create fake loading bars and confidence percentages. |
+| System Integration | Uses the os module to auto-clear the terminal screen on launch. |
 | Condition analysis | Shows diagnosis, severity & treatment |
 | Error-free lookup | Uses `.get()` to avoid crashes if data missing |
 | Greeting response | Welcomes users if they say hello/hi |
@@ -26,13 +28,17 @@ This project is developed for learning purposes to help beginners practice:
 ✔ String handling & loops  
 ✔ Defensive programming (`.get()`)  
 ✔ Simple chatbot logic
+✔ Module Implementation: Using os, time, and random.
 
 ---
 
 ## 🛠 Technologies / Tools Used
-| Tool | Purpose |
+| Tool/Module | Purpose |
 |------|---------|
 | Python | Core programming language |
+| os | Used to detect the operating system and clear the console screen. |
+| time | Used for sleep (loading delays) and generating timestamps. |
+| random | Generates random confidence scores, greetings, and health tips |
 | Terminal / CMD | Program execution |
 | Dictionary Data Model | Stores medical information |
 

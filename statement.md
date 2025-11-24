@@ -47,6 +47,8 @@ Always consult a doctor for actual health issues.
 | Feature | Description |
 |--------|-------------|
 | Symptom recognition | Detect symptoms from user input |
+| Simulated "AI" | Uses time and random to create fake loading bars and confidence percentages. |
+| System Integration | Uses the os module to auto-clear the terminal screen on launch. |
 | Condition report | Displays diagnosis, treatment & severity level |
 | Critical warning | Strong alert when “high severity” symptoms are detected |
 | Safe fallback | User notified when unknown symptoms are entered |
@@ -55,4 +57,4 @@ Always consult a doctor for actual health issues.
 
 ---
 
-📌 **Document Version:** 5.2 — `statement.md`  
+ 
